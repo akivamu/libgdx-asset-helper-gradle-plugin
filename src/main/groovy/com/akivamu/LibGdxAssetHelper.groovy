@@ -7,5 +7,6 @@ class LibGdxAssetHelper implements Plugin<Project> {
     @Override
     void apply(Project project) {
         project.task("packTexture", type: PackTextureTask)
+        project.task("cryptTexture", type: CryptTextureTask)
     }
 }

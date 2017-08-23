@@ -7,6 +7,7 @@ apply plugin: 'maven'
 repositories {
     mavenCentral()
     jcenter()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -14,4 +15,5 @@ dependencies {
     compile localGroovy()
 
     compile "com.badlogicgames.gdx:gdx-tools:1.9.6"
+    compile 'com.github.akivamu:libgdx-crypt-texture:master-SNAPSHOT'
 }
