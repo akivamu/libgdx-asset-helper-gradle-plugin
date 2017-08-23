@@ -1,6 +1,18 @@
 group 'com.akivamu'
 version '1.0.0'
 
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
+    }
+}
+
+apply plugin: "com.gradle.plugin-publish"
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
@@ -17,3 +29,20 @@ dependencies {
     compile "com.badlogicgames.gdx:gdx-tools:1.9.6"
     compile 'com.github.akivamu:libgdx-crypt-texture:master-SNAPSHOT'
 }
+
+pluginBundle {
+    website = 'https://github.com/akivamu/libgdx-asset-helper-gradle-plugin'
+    vcsUrl = 'https://github.com/akivamu/libgdx-asset-helper-gradle-plugin'
+    description = 'My personal plugin as asset helper for LibGdx'
+    tags = ['LibGdx']
+
+    plugins {
+        assetHelperPlugin {
+            id = 'com.akivamu.libgdx-asset-helper'
+            displayName = 'LibGdx Asset Helper plugin'
+        }
+    }
+}
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
