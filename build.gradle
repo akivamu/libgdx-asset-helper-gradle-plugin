@@ -6,9 +6,12 @@ apply plugin: 'maven'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     compile gradleApi()
     compile localGroovy()
+
+    compile "com.badlogicgames.gdx:gdx-tools:1.9.6"
 }
